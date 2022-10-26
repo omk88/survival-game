@@ -19,6 +19,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.tag.Equals("Floor") || collision.transform.tag.Equals("Wall")) { Debug.Log("HIT!!!");  Destroy(transform.gameObject); }
+        if (collision.transform.tag.Equals("Floor") || collision.transform.tag.Equals("Wall")) { Destroy(transform.gameObject); }
+        if (collision.transform.tag.Equals("Enemy"))
+        {
+            Debug.Log("HIT ENEMY!!!");
+            collision.transform.GetComponent<EnemyAI>().health -= transform.GetComponent<Rigidbody>().velocity.magnitude;
+            if (collision.transform.GetComponent<EnemyAI>().health <= 0f)
+            {
+                Destroy(collision.transform.gameObject);
+            }
+        }
     }
 }

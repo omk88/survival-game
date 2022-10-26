@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 public class Item
 {
@@ -13,6 +14,14 @@ public class Item
         _Name = Name;
         _Description = Description;
         _Tags = tags;
+    }
+
+    public Item(string ID, string Name, string Description)
+    {
+        _ID = ID;
+        _Name = Name;
+        _Description = Description;
+        _Tags = new Tuple<string, string>[]{ };
     }
 
     public string ID

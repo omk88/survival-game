@@ -8,11 +8,27 @@ public class Player
     public Dictionary<Item, int> inventory { get; set; }
     public List<Weapon> weapons { get; set; }
 
+    public int health { get; set; }
+    public int maxHealth { get; set; }
+
     public Player(Vector3 pos)
     {
         this.pos = pos;
         this.inventory = new Dictionary<Item, int>();
         this.weapons = new List<Weapon>();
+        maxHealth = 100;
+        health = maxHealth;
+    }
+    public int getItemCount(string item)
+    {
+        foreach (var a in inventory.Keys)
+        {
+            if (a.Name == item)
+            {
+                return inventory[a];
+            }
+        }
+        return 0;
     }
 
     public void addItem(Item item, int count)
@@ -40,7 +56,7 @@ public class Player
         {
             if (a.Name.Equals(item.Name))
             {
-                if (count - inventory[a] <= 0)
+                if (inventory[a] - count <= 0)
                 {
                     inventory.Remove(a);
                 }
@@ -59,7 +75,7 @@ public class Player
         {
             if (a.Name.Equals(item))
             {
-                if (count - inventory[a] <= 0)
+                if (inventory[a] - count <= 0)
                 {
                     inventory.Remove(a);
                 }

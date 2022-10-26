@@ -118,7 +118,7 @@ MonoBehaviour:
   - ShotType:Single
   - ShotCount:1
   - Size:1
-  - Speed:100
+  - Speed:50
   - Magazine:30
   - Ammo:Rifle Ammo
   Count: 0
