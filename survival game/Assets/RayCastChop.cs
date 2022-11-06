@@ -28,6 +28,21 @@ void Update()
     {
         if (Physics.Raycast (theRay, out hit))
         {
+            if(axe.activeInHierarchy && Input.GetButtonDown("Drop"))
+            {
+                print("Axe Dropped");
+                axe.SetActive(false);
+                Instantiate(axeItem, player.transform.position, Quaternion.identity);
+                itemScript.DropItem("AxeItem");
+            }
+            else if(pickaxe.activeInHierarchy && Input.GetButtonDown("Drop"))
+            {
+                print("Pickaxe Dropped");
+                pickaxe.SetActive(false);
+                Instantiate(pickaxeItem, player.transform.position, Quaternion.identity);
+                itemScript.DropItem("PickaxeItem");
+            }
+
             if(hit.collider.gameObject.tag == "Tree")
             {
                 print(hit.collider.gameObject.tag + " hit");
@@ -59,6 +74,7 @@ void Update()
 
                 if(Input.GetButtonDown("Pick up"))
                 {
+                    itemScript.itemName = hit.collider.gameObject.tag;
                     itemScript.destroyed = true;
                 }
             }
@@ -69,6 +85,7 @@ void Update()
 
                 if(Input.GetButtonDown("Pick up"))
                 {
+                    itemScript.itemName = hit.collider.gameObject.tag;
                     itemScript.destroyed = true;
                 }
             }
@@ -81,10 +98,12 @@ void Update()
                 {
                     if(pickaxe.activeInHierarchy)
                     {
+                        itemScript.DropItem("PickaxeItem");
                         pickaxe.SetActive(false);
                         Instantiate(pickaxeItem, player.transform.position, Quaternion.identity);
                     }
 
+                    itemScript.itemName = hit.collider.gameObject.tag;
                     itemScript.destroyed = true;
                     axe.SetActive(true);
                 }
@@ -98,9 +117,12 @@ void Update()
                 {
                     if(axe.activeInHierarchy)
                     {
+                        itemScript.DropItem("AxeItem");
                         axe.SetActive(false);
                         Instantiate(axeItem, player.transform.position, Quaternion.identity);
                     }
+
+                    itemScript.itemName = hit.collider.gameObject.tag;
                     itemScript.destroyed = true;
                     pickaxe.SetActive(true);
                 }

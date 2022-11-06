@@ -129,3 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 1412363419793618866}
   destroyed: 0
+  inv: {fileID: 0}
+  itemName: 
