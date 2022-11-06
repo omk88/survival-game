@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FillImage: {fileID: 1894600257}
-  CurrentHealth: 300
+  CurrentHealth: 30
 --- !u!1 &994565464
 GameObject:
   m_ObjectHideFlags: 0
