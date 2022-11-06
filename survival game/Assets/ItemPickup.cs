@@ -17,7 +17,7 @@ public class ItemPickup : MonoBehaviour
         if(destroyed)
         {
             Destroy(item);
-            print("12444");
+            print("Item Picked up");
         }
     }
 }

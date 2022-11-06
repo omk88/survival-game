@@ -8,6 +8,11 @@ public TreeController treeScript;
 public RockController rockScript;
 public ItemPickup itemScript;
 public ParticleSystem particles;
+public GameObject axe;
+public GameObject axeItem;
+public GameObject pickaxe;
+public GameObject pickaxeItem;
+public Camera player;
 
 void Update()
 {
@@ -27,7 +32,7 @@ void Update()
                 print(hit.collider.gameObject.tag + " hit");
                 treeScript = (TreeController)GameObject.Find(hit.collider.gameObject.name).GetComponent(typeof(TreeController));
                 
-                if(Input.GetButtonDown("Fire1"))
+                if(Input.GetButtonDown("Fire1") && axe.activeInHierarchy)
                 {
                     print("Health decreased");
                     treeScript.health -= 1;
@@ -39,7 +44,7 @@ void Update()
                 print(hit.collider.gameObject.tag + " hit");
                 rockScript = (RockController)GameObject.Find(hit.collider.gameObject.name).GetComponent(typeof(RockController));
 
-                if(Input.GetButtonDown("Fire1"))
+                if(Input.GetButtonDown("Fire1") && pickaxe.activeInHierarchy)
                 {
                     print("Health decreased");
                     rockScript.health -= 1;
@@ -64,6 +69,39 @@ void Update()
                 if(Input.GetButtonDown("Pick up"))
                 {
                     itemScript.destroyed = true;
+                }
+            }
+            else if(hit.collider.gameObject.tag == "AxeItem")
+            {
+                print(hit.collider.gameObject.tag + " hit");
+                itemScript = (ItemPickup)GameObject.Find(hit.collider.gameObject.name).GetComponent(typeof(ItemPickup));
+
+                if(Input.GetButtonDown("Pick up"))
+                {
+                    if(pickaxe.activeInHierarchy)
+                    {
+                        pickaxe.SetActive(false);
+                        Instantiate(pickaxeItem, player.transform.position, Quaternion.identity);
+                    }
+
+                    itemScript.destroyed = true;
+                    axe.SetActive(true);
+                }
+            }
+            else if(hit.collider.gameObject.tag == "PickaxeItem")
+            {
+                print(hit.collider.gameObject.tag + " hit");
+                itemScript = (ItemPickup)GameObject.Find(hit.collider.gameObject.name).GetComponent(typeof(ItemPickup));
+
+                if(Input.GetButtonDown("Pick up"))
+                {
+                    if(axe.activeInHierarchy)
+                    {
+                        axe.SetActive(false);
+                        Instantiate(axeItem, player.transform.position, Quaternion.identity);
+                    }
+                    itemScript.destroyed = true;
+                    pickaxe.SetActive(true);
                 }
             }
 
