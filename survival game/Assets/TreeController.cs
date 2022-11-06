@@ -11,6 +11,8 @@ public GameObject tree;
 
 public int speed = 8;
 public bool fell = false;
+public GameObject thisTree;
+public GenerateTrees treeGen;
 
 void Start()
 {

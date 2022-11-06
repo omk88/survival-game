@@ -47,6 +47,7 @@ void Update()
             {
                 print(hit.collider.gameObject.tag + " hit");
                 treeScript = (TreeController)GameObject.Find(hit.collider.gameObject.name).GetComponent(typeof(TreeController));
+
                 
                 if(Input.GetButtonDown("Fire1") && axe.activeInHierarchy)
                 {

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  rocks: {fileID: 0}
+  rocks: {fileID: 8999119317060259014, guid: f52eed3b58e9d7b4ca0e80c8db0536eb, type: 3}
   rock: {fileID: 2143645920218221720}
   particles: {fileID: 324323644115137369, guid: 3accde9beb9c8194fb1165f212fe4d63, type: 3}
   speed1: 8
