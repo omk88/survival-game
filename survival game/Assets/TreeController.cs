@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class TreeController : MonoBehaviour
 {
-public int treeHealth = 5;
+public int health = 5;
 
 public Transform logs;
 public GameObject tree;
 
 public int speed = 8;
 public bool fell = false;
-
-//public Vector3 position = Vector3(Random.Range(-1.0, 1.0), 0, Random.Range(-1.0, 1.0));
 
 void Start()
 {
@@ -22,7 +20,7 @@ void Start()
 
 void Update()
 {
-    if(treeHealth <= 0 && fell == false)
+    if(health <= 0 && fell == false)
     {
         fell = true;
         GetComponent<Rigidbody>().isKinematic = false;
@@ -35,7 +33,9 @@ void DestroyTree()
 {
     new WaitForSeconds(5);
 
-    Instantiate(logs, tree.transform.position, Quaternion.identity);
+    Transform logObject = Instantiate(logs, tree.transform.position, Quaternion.identity);
+
+    logObject.name = (Random.Range(-100.0f, 100.0f)).ToString();
 
     Destroy(tree);
 
