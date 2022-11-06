@@ -25,9 +25,5 @@ public class AnimateAxe : MonoBehaviour
             print(random);
         }
 
-        IEnumerator Sleep()
-        {
-            yield return new WaitForSeconds(4);
-        }
     }
 }

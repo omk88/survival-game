@@ -16,6 +16,7 @@ public Camera player;
 
 void Update()
 {
+    Cursor.lockState = CursorLockMode.Locked;
     Vector3 fwd = Vector3.forward;
 
     Ray theRay = new Ray(transform.position, transform.TransformDirection(fwd * 5));
