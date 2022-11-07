@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 899593630993367573}
   - component: {fileID: 899593630993367571}
   - component: {fileID: 8456440006210956791}
+  - component: {fileID: 5456852792772808928}
   m_Layer: 0
   m_Name: AxeItem
   m_TagString: AxeItem
@@ -151,7 +152,7 @@ Transform:
   - {fileID: 5507427999347584493}
   - {fileID: 4737639144504086867}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.924, y: -179.038, z: 66.587}
 --- !u!54 &899593630993367570
 Rigidbody:
@@ -224,7 +225,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a9f1f165ad847a7932a549d1d9d4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 2e5f1573149104ea0bb41f7c6b364f38, type: 2}
+  SItem: {fileID: 11400000, guid: 2e5f1573149104ea0bb41f7c6b364f38, type: 2}
+--- !u!114 &5456852792772808928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065756559670604643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b9638d1e12444cba5ab445d991fc76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SItem: {fileID: 11400000, guid: 2e5f1573149104ea0bb41f7c6b364f38, type: 2}
 --- !u!1 &3874511156325753355
 GameObject:
   m_ObjectHideFlags: 0
