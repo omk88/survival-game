@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public PlayerManager player;
     public Transform playerPosition;
     public NavMeshAgent agent;
-    public int health {get; set;}
+    public float health {get; set;}
     public float visionRadius = 10f;
 
     public float moveSpeed = 4f;
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(transform.gameObject);
         }
-
+        
         float distance = Vector3.Distance(playerPosition.position, transform.position);
         if (distance <= visionRadius) 
         {
