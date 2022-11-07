@@ -41,6 +41,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (player.health == 0) {
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
+        }
         if (player.weapons.Count >= 1)
         {
             foreach (var a in player.weapons)
