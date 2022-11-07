@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     public bool isFollowing;
     public int health;
-    public float visionRadius = 5f;
+    public float visionRadius = 10f;
 
     public float moveSpeed = 3f;
     public float rotationSpeed = 100f;
