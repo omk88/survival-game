@@ -2,32 +2,32 @@ using UnityEngine;
 
 public class MoveControl : MonoBehaviour
 {
+    public CharacterController controller;
     private bool canJump = true;
     public float moveSpeed = 5F;
-    public Vector3 jumpForce;
+    public float jumpForce;
+    private float yVel;
 
-    private Rigidbody rb;
 
-    void Start()
-    {
-        rb = transform.GetComponent<Rigidbody>();
-    }
 
     void Update()
     {
-        transform.position += updateMove();
-
-        if (Input.GetKey(KeyCode.Space))
+        canJump = controller.isGrounded;
+        if (canJump && yVel < 0)
         {
-            if (canJump)
-            {
-                if (rb.velocity.y <= 0.1 && rb.velocity.y >= -0.1)
-                {
-                    rb.velocity = jumpForce;
-                    canJump = false;
-                }
-            }
+            yVel = 0f;
         }
+
+        controller.Move(updateMove() * Time.deltaTime * moveSpeed);
+
+        // Changes the height position of the player..
+        if (Input.GetButtonDown("Jump") && canJump)
+        {
+            yVel += Mathf.Sqrt(jumpForce * 9.81f);
+        }
+
+        yVel += -9.81f * Time.deltaTime;
+        controller.Move(new Vector3(0, yVel, 0) * Time.deltaTime);
     }
 
     Vector3 updateMove()
@@ -36,29 +36,21 @@ public class MoveControl : MonoBehaviour
         Vector3 changePos = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.A))
         {
-            changePos += new Vector3(-transform.right.x, 0, -transform.right.z) * Time.deltaTime * moveSpeed;
+            changePos += new Vector3(-transform.right.x, 0, -transform.right.z);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            changePos += new Vector3(transform.right.x, 0, transform.right.z) * Time.deltaTime * moveSpeed;
+            changePos += new Vector3(transform.right.x, 0, transform.right.z);
         }
         if (Input.GetKey(KeyCode.W))
         {
-            changePos += new Vector3(transform.forward.x, 0, transform.forward.z) * Time.deltaTime * moveSpeed;
+            changePos += new Vector3(transform.forward.x, 0, transform.forward.z);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            changePos += new Vector3(-transform.forward.x, 0, -transform.forward.z) * Time.deltaTime * moveSpeed;
+            changePos += new Vector3(-transform.forward.x, 0, -transform.forward.z);
         }
 
         return changePos;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Floor")
-        {
-            canJump = true;
-        }
     }
 }
