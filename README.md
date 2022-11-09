@@ -2,7 +2,7 @@
 
 ## Controls:
 
-• Move forward, left, back and right - 	**W, A, S, D.	**
+• Move forward, left, back and right - 	**W, A, S, D.**
 
 • Interact/Pick up item - 	**E.**
 
