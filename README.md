@@ -46,3 +46,5 @@ The time of day slowly progresses as the player plays the game. This is done by 
 ## Enemy and health/health UI system and death.
 
 Enemy gameobjects are attached to the aforementioned "EnemySpawner", which is enabled or disabled depending on the time of day. Enemies themselves are placeholder capsules with an enemy AI attached. The AI has a number of different behaviour states which are transitioned between depending on the condition of the player. Enemies also have health which is decreased if the player attacks them (presses left mouse button while the tag has been hit with the players raycast). The player can also receive damage from the enemies, which is done by decreasing a value and updating the health UI when the enemy comes into collision with the player.
+
+![health](https://user-images.githubusercontent.com/46501575/200944045-749ab10c-30fe-4b1c-aa7f-779157565c96.png)
