@@ -20,6 +20,7 @@ When the player first enters the game, they have the ability to pick up an axe o
 
 ![Equipment2](https://user-images.githubusercontent.com/46501575/200940261-1fbb290b-34bc-4a72-abdb-15892306c9de.png)
 
+![Equipment3](https://user-images.githubusercontent.com/46501575/200940808-b1caef08-7255-4ce1-ac61-1dd389da7f7c.png)
 
 ## Tree/rock destruction and item collection system.
 
