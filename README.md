@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=m9hj9PdO328
 
 • Move forward, left, back and right - 	**W, A, S, D.**
 
+• Attack/Mine - 	**Left Mouse Button.**
+
 • Interact/Pick up item - 	**E.**
 
 • Open Inventory - 	**I.**
