@@ -10,7 +10,7 @@ Spawn points are selected on the terrain during runtime by generating random X a
 
 ## Axe and pickaxe equipment system.
 
-When the player first enters the game, they have the ability to pick up an axe or pickaxe by pressing the "E" key. Doing so will "equip" the item, meaning the model of the item on the floor will be destroyed and an animated first person version will be enabled which is attached to the player. The axe and pickaxe both have idle and swing animations that are triggered by idling or clicking the left mouse button. Picking up an axe/pickaxe will add the respective item to the players inventory. The player also has the ability to drop the axe/pickaxe by pressing F. This will instantiate a new item model on the floor and disable the first person view of that item.
+When the player first enters the game, they have the ability to pick up an axe or pickaxe by pressing the "E" key. Doing so will "equip" the item, meaning the model of the item on the floor will be destroyed and an animated first person version will be enabled in the game hierarchy which is attached to the player. The axe and pickaxe both have idle and swing animations that are triggered by idling or clicking the left mouse button, using a script. Picking up an axe/pickaxe will add the respective item to the players inventory. The player also has the ability to drop the axe/pickaxe by pressing F. This will instantiate a new item model on the floor and disable the first person view of that item.
 
 ## Tree/rock destruction and item collection system.
 
@@ -18,4 +18,4 @@ All trees and rocks spawned in the game can be broken, provided the player has e
 
 ## Inventory system and inventory UI.
 
-Picked up items are added to a list which stores 
+Picked up items are added to a list which stores the tags of each item that has been picked up. A UI to display these values is enabled in the hierarchy when the player presses the "I" key, which also disables scripts for movement and camera control. 
