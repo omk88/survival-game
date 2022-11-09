@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
 
                         if (hit.distance <= 2 && CanAttack)
                         {
-                            hit.transform.parent.GetComponent<PlayerManager>().player.health -= Damage;
+                            Player.instance.health -= Damage;
                             CanAttack = false;
                         }
                     }

@@ -2,23 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player
+public class Player : MonoBehaviour
 {
-    Vector3 pos;
-    public Dictionary<Item, int> inventory { get; set; }
-    public List<Weapon> weapons { get; set; }
-
-    public int health { get; set; }
-    public int maxHealth { get; set; }
-
-    public Player(Vector3 pos)
+    #region Singleton
+    public static Player instance;
+    void Awake()
     {
-        this.pos = pos;
-        this.inventory = new Dictionary<Item, int>();
-        this.weapons = new List<Weapon>();
-        maxHealth = 100;
-        health = maxHealth;
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one player");
+            return;
+        }
+
+        instance = this;
     }
+    #endregion
+
+    Vector3 pos;
+    public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
+
+    public int health = 100;
+    public int maxHealth = 100;
+
+    public Item equippedItem;
+
+    public delegate void OnInvChange();
+    public OnInvChange OnInvChangeCall;
+
     public int getItemCount(string item)
     {
         foreach (var a in inventory.Keys)
@@ -33,22 +43,20 @@ public class Player
 
     public void addItem(Item item, int count)
     {
-        foreach(var a in inventory.Keys)
+        foreach (var a in inventory.Keys)
         {
             if (a.Name == item.Name)
             {
                 inventory[a] += count;
+                OnInvChangeCall();
                 return;
             }
         }
 
         inventory.Add(item, count);
+        OnInvChangeCall();
     }
 
-    public void addWeapon(Weapon weapon)
-    {
-        weapons.Add(weapon);
-    }
 
     public void removeItem(Item item, int count)
     {
@@ -59,10 +67,12 @@ public class Player
                 if (inventory[a] - count <= 0)
                 {
                     inventory.Remove(a);
+                    OnInvChangeCall();
                 }
                 else
                 {
                     inventory[a] -= count;
+                    OnInvChangeCall();
                 }
                 return;
             }
@@ -78,10 +88,12 @@ public class Player
                 if (inventory[a] - count <= 0)
                 {
                     inventory.Remove(a);
+                    OnInvChangeCall();
                 }
                 else
                 {
                     inventory[a] -= count;
+                    OnInvChangeCall();
                 }
                 return;
             }
@@ -110,7 +122,7 @@ public class Player
         {
             if (a.Name.Equals(item))
             {
-                if (inventory[a]-count >= 0)
+                if (inventory[a] - count >= 0)
                 {
                     return true;
                 }
@@ -123,10 +135,6 @@ public class Player
     public string invToStr()
     {
         string output = "";
-        foreach(var a in weapons)
-        {
-            output += a.Name + " " + a.Description + " " + a.Ammo + " " + a.Damage + "\n";
-        }
         foreach (var a in inventory)
         {
             output += a.Key.Name + " " + a.Key.Description + " " + a.Value.ToString() + "\n";

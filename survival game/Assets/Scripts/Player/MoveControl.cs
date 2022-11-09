@@ -20,7 +20,6 @@ public class MoveControl : MonoBehaviour
 
         controller.Move(updateMove() * Time.deltaTime * moveSpeed);
 
-        // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && canJump)
         {
             yVel += Mathf.Sqrt(jumpForce * 9.81f);

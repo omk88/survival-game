@@ -4,24 +4,22 @@ using System;
 
 public class UI : MonoBehaviour
 {
-    public GameObject playerObject;
-    private PlayerManager playerManager;
     public GameObject HP;
     public GameObject Weap;
     public GameObject AmmoCount;
+    private Player player;
 
     void Start()
     {
-        playerManager = playerObject.GetComponent<PlayerManager>();
+        player = Player.instance;
     }
 
     void Update()
     {
         try
         {
-            Weap.GetComponent<TMP_Text>().SetText(playerManager.weapon.Name);
-            HP.GetComponent<TMP_Text>().SetText(playerManager.player.maxHealth + "/" + playerManager.player.health);
-            AmmoCount.GetComponent<TMP_Text>().SetText(playerManager.player.getItemCount(playerManager.weapon.Ammo) + "/" + playerManager.weapon.AmmoCount);
+            Weap.GetComponent<TMP_Text>().SetText(player.equippedItem.Name);
+            HP.GetComponent<TMP_Text>().SetText(player.maxHealth + "/" + player.health);
         }
         catch(Exception) { }
     }

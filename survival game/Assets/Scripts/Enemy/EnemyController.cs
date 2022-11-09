@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
-    public PlayerManager player;
     public Transform playerPosition;
     public NavMeshAgent agent;
     public float health {get; set;}
@@ -54,7 +52,7 @@ public class EnemyController : MonoBehaviour
             {
                 if (Time.time > lastAttacked + cooldown) 
                 {
-                    player.player.health -= 5;
+                    Player.instance.health -= 5;
                     lastAttacked = Time.time;
                 }
             }
@@ -131,7 +129,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.player.health -= 10;
+            Player.instance.health -= 10;
         }
     }
 
