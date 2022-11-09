@@ -14,8 +14,8 @@ When the player first enters the game, they have the ability to pick up an axe o
 
 • Tree/rock destruction and item collection system.
 
-All trees and rocks spawned in the game can be broken, provided the player has equipped the correct tool. For instance, trees can only be broken if the player has an axe equipped, rocks can only be broken if the player has a pickaxe equipped. Once a tree or rock has been broken an item is dropped that the player can pick up by pressing "E" (rocks have to broken multiple times to drop items). Once a player picks up an item, the tag of that item is then added to the inventory system. Berries can be picked up simply by pressing "E".
+All trees and rocks spawned in the game can be broken, provided the player has equipped the correct tool. For instance, trees can only be broken if the player has an axe equipped, rocks can only be broken if the player has a pickaxe equipped. Once a tree or rock has been broken an item is dropped that the player can pick up by pressing "E" (rocks have to broken multiple times to drop items). Once a player picks up an item, the tag of that item is then added to the inventory system. Berries can be picked up simply by pressing "E". This is done by using a raycast and tagging gameobjects to distinguish between different objects in the game and storing health values for each tree/rock which are decreased when the player clicks on them. Once the health reaches zero, that gameobject is destroyed and an item object is instantiated in its place.
 
 • Inventory system and inventory UI.
 
-
+Picked up items are added to a list which stores 
