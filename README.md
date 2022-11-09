@@ -2,6 +2,10 @@
 
 ## Features:
 
+## Player movement system.
+
+
+
 ## Random generation of trees, rocks and berry bushes on terrain.
 
 Spawn points are selected on the terrain during runtime by generating random X and Z co-ordinates, then the terrain is sampled for its height value which is set to the Y value, and a tree, rock or berry bush is generated at that position. This means a random set of trees/rocks/berry bushes is generated each time.
@@ -18,4 +22,8 @@ All trees and rocks spawned in the game can be broken, provided the player has e
 
 ## Inventory system and inventory UI.
 
-Picked up items are added to a list which stores the tags of each item that has been picked up. A UI to display these values is enabled in the hierarchy when the player presses the "I" key, which also disables scripts for movement and camera control. 
+Picked up items are added to a list which stores the tags of each item that has been picked up. A UI to display these values is enabled in the hierarchy when the player presses the "I" key, which also disables scripts for movement and camera control. These can be re-enabled, along with disabling the UI element when the user presses "I" once more. The inventory UI will look through the inventory list when it is opened, and instantiate UI icons (at the moment they are just different coloured squares) in different positions relative to available slots in the inventory. Put simply, this means the player is able to open an inventory by pressing "I", which logs current items that have been gathered.
+
+## Day/Night system and enemy spawning.
+
+The time of day slowly progresses as the player plays the game. This is done by altering the values of the directional light in the scene and using a lighting preset to make the scene appear as though it is a different time of day. We also log the time of day with a variable, and use it to determine whether or not to enable the "EnemySpawner" gameobject, which contains a script to select random points - relative to the player - to spawn enemy gameobjects. The enemy spawner is enabled during the night and disabled at sunrise, along with destroying all enemy gameobjects. Effectively this means that there is a day and night system, which spawns enemies at night, and despawns them at sunrise.
