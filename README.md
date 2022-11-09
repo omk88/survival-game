@@ -14,9 +14,9 @@ A basic survival game prototype.
 
 
 
-## Player movement system.
+## Player movement system and camera follow system.
 
-
+The player is able to move around on the terrain with use of a script that detects user keystrokes and moves the player object accordingly. The main camera is moved by detecting the mouse position and following it.
 
 ## Random generation of trees, rocks and berry bushes on terrain.
 
