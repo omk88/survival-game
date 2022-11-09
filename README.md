@@ -1,5 +1,7 @@
 # Survival Game Prototype
 
+A basic survival game prototype.
+
 ## Controls:
 
 • Move forward, left, back and right - 	**W, A, S, D.**
@@ -9,6 +11,8 @@
 • Open Inventory - 	**I.**
 
 ## Features:
+
+
 
 ## Player movement system.
 
