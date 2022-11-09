@@ -2,6 +2,10 @@
 
 A basic survival game prototype.
 
+## WebGL:
+
+https://omk88.github.io/survival-game/build/index.html
+
 ## References:
 
 https://www.youtube.com/watch?v=m9hj9PdO328
