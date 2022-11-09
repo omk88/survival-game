@@ -5,6 +5,7 @@ A basic survival game prototype.
 ## References:
 
 https://www.youtube.com/watch?v=m9hj9PdO328
+https://www.youtube.com/watch?v=yFBB7gvmzK8
 
 ## Controls:
 
