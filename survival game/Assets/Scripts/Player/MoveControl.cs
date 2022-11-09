@@ -50,6 +50,11 @@ public class MoveControl : MonoBehaviour
             changePos += new Vector3(-transform.forward.x, 0, -transform.forward.z);
         }
 
+        if (Input.GetKey("left shift") || Input.GetKey("right shift"))
+        {
+            return changePos * 1.5f;
+        }
+
         return changePos;
     }
 }

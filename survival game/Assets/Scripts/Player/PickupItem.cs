@@ -34,11 +34,6 @@ public class PickupItem : MonoBehaviour
                     Destroy(hit.transform.gameObject);
                 }
             }
-            else
-            {
-                Debug.DrawRay(transform.position, ray.direction * 1000, Color.white);
-                Debug.Log("Did not Hit");
-            }
         }
     }
 }

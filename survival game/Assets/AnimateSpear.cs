@@ -7,25 +7,28 @@ public class AnimateSpear : MonoBehaviour
     public GameObject Spear;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Player.instance.isPaused)
         {
-            int random = Random.Range(1, 2);
-
-            if (random == 1)
+            if (Input.GetMouseButtonDown(0))
             {
-                Spear.GetComponent<Animator>().Play("BowFire");
-                //StartCoroutine(Sleep());
-                //axe.GetComponent<Animator>().enabled = false;
-                print("anim0");
+                int random = Random.Range(1, 2);
+
+                if (random == 1)
+                {
+                    Spear.GetComponent<Animator>().Play("BowFire");
+                    //StartCoroutine(Sleep());
+                    //axe.GetComponent<Animator>().enabled = false;
+                    print("anim0");
+                }
+
+
+                print(random);
             }
 
-
-            print(random);
-        }
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            Spear.GetComponent<Animator>().Play("BowMove");
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                Spear.GetComponent<Animator>().Play("BowMove");
+            }
         }
     }
 }

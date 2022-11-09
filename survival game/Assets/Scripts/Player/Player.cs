@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    public bool isPaused;
     Vector3 pos;
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
 
@@ -57,6 +58,19 @@ public class Player : MonoBehaviour
         OnInvChangeCall();
     }
 
+    public void removeItem(Item item)
+    {
+        foreach (var a in inventory.Keys)
+        {
+            if (a.Name.Equals(item.Name))
+            {
+                inventory.Remove(a);
+                OnInvChangeCall();
+
+                return;
+            }
+        }
+    }
 
     public void removeItem(Item item, int count)
     {
