@@ -13,4 +13,4 @@ public class SItem : ScriptableObject
     public Sprite icon;
 
 }
-//https://www.youtube.com/watch?v=AoD_F1fSFFg , Solo Game Dev ,acessed 11/22 
+//based on UI inventory tutorial- add link

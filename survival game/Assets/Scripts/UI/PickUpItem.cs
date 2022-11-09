@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpItem : MonoBehaviour //https://www.youtube.com/watch?v=AoD_F1fSFFg , Solo Game Dev ,acessed 11/22 
+public class PickUpItem : MonoBehaviour //based on youtube tutorial-add link 
 {
-    public SItem SItem;
+    public SItem Item;
 
     void Pickup()
     {
-        InventoryManager.Instance.Add(SItem);
+        InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
     }
 

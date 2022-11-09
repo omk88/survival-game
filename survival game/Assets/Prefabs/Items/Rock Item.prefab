@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 6722329117216434878}
   - component: {fileID: 7334802569227223632}
   - component: {fileID: 3824187345820117110}
-  - component: {fileID: 5911555287786553139}
+  - component: {fileID: 3824187345820117111}
+  - component: {fileID: 4418622479822730339}
   m_Layer: 0
   m_Name: Rock Item
-  m_TagString: Item
+  m_TagString: RockItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5911555287786553139
+--- !u!114 &3824187345820117111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +125,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412363419793618866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d51365a01ae4a434dae9233503418457, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ffff47c61fbe56459551d57ab2b8f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Count: 1
-  item: {fileID: 11400000, guid: 4e2fd62994ed35745a751b630ad1a5c4, type: 2}
+  item: {fileID: 1412363419793618866}
+  destroyed: 0
+  inv: {fileID: 0}
+  itemName: 
+--- !u!114 &4418622479822730339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412363419793618866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a9f1f165ad847a7932a549d1d9d4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: d2379a82f5ca54c72907f43dcd09a6c9, type: 2}

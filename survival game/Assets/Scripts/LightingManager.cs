@@ -10,9 +10,20 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private LightingPreset Preset;
     //Variables
     [SerializeField, Range(0, 600)] private float TimeOfDay;
+    public GameObject enemySpawner;
 
     private void Update()
     {
+        if(TimeOfDay >= 450 && TimeOfDay <= 460)
+        {
+            enemySpawner.SetActive(true);
+        }
+        else if(TimeOfDay >= 130 && TimeOfDay <= 140)
+        {
+            enemySpawner.SetActive(false);
+            Destroy(GameObject.Find("Enemy(Clone)"));
+        }
+
         if(Preset == null)
         {
             return;

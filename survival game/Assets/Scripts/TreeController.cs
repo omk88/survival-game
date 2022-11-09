@@ -17,7 +17,7 @@ public GenerateTrees treeGen;
 void Start()
 {
 	tree = this.gameObject;
-	GetComponent<Rigidbody>().isKinematic = true;
+	//GetComponent<Rigidbody>().isKinematic = true;
 }
 
 void Update()
@@ -25,16 +25,14 @@ void Update()
     if(health <= 0 && fell == false)
     {
         fell = true;
-        GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        //GetComponent<Rigidbody>().isKinematic = false;
+        //GetComponent<Rigidbody>().AddForce(transform.forward * speed);
         DestroyTree();
     }
 }
 
 void DestroyTree()
 {
-    new WaitForSeconds(5);
-
     Transform logObject = Instantiate(logs, tree.transform.position, Quaternion.identity);
 
     logObject.name = (Random.Range(-100.0f, 100.0f)).ToString();

@@ -14,6 +14,8 @@ TagManager:
   - LogItem
   - AxeItem
   - PickaxeItem
+  - Item
+  - BerriesItem
   layers:
   - Default
   - TransparentFX

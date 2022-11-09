@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2248434032613279891}
   - component: {fileID: 2248434032613279888}
   - component: {fileID: 2248434032613279890}
+  - component: {fileID: 5230086308952060681}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -155,3 +156,23 @@ MonoBehaviour:
   Damage: 5
   AttackSpeed: 2
   health: 100
+--- !u!114 &5230086308952060681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248434032613279893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119abf628a1755d48ac3778e32d235c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4878049118873215542, guid: 5286bcdfc23590448adae500c79a1db1, type: 3}
+  playerPosition: {fileID: 0}
+  agent: {fileID: 0}
+  visionRadius: 10
+  moveSpeed: 4
+  rotationSpeed: 100
+  cooldown: 1
+  lastAttacked: -9999
