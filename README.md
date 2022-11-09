@@ -34,9 +34,14 @@ All trees and rocks spawned in the game can be broken, provided the player has e
 
 Picked up items are added to a list which stores the tags of each item that has been picked up. A UI to display these values is enabled in the hierarchy when the player presses the "I" key, which also disables scripts for movement and camera control. These can be re-enabled, along with disabling the UI element when the user presses "I" once more. The inventory UI will look through the inventory list when it is opened, and instantiate UI icons (at the moment they are just different coloured squares) in different positions relative to available slots in the inventory. Put simply, this means the player is able to open an inventory by pressing "I", which logs current items that have been gathered.
 
+![Inventory](https://user-images.githubusercontent.com/46501575/200942127-8e3137dc-b846-4d4e-81f2-fdf44bc8f38a.png)
+
 ## Day/Night system and enemy spawning.
 
 The time of day slowly progresses as the player plays the game. This is done by altering the values of the directional light in the scene and using a lighting preset to make the scene appear as though it is a different time of day. We also log the time of day with a variable, and use it to determine whether or not to enable the "EnemySpawner" gameobject, which contains a script to select random points - relative to the player - to spawn enemy gameobjects. The enemy spawner is enabled during the night and disabled at sunrise, along with destroying all enemy gameobjects. Effectively this means that there is a day and night system, which spawns enemies at night, and despawns them at sunrise. Full days are ten minutes long, however it takes roughly five to seven minutes for enemies to begin spawning.
+
+![Enemies and night](https://user-images.githubusercontent.com/46501575/200943072-e7157105-5226-48d6-9f8e-c493019ff7cf.png)
+
 
 ## Enemy and health/health UI system and death.
 
