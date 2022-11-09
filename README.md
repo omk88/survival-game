@@ -2,6 +2,10 @@
 
 A basic survival game prototype.
 
+## References:
+
+https://www.youtube.com/watch?v=m9hj9PdO328
+
 ## Controls:
 
 • Move forward, left, back and right - 	**W, A, S, D.**
