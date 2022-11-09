@@ -32,8 +32,8 @@ public class Bullet : MonoBehaviour
             if (collision.transform.tag.Equals("Enemy"))
             {
                 Debug.Log("HIT ENEMY!!!");
-                collision.transform.GetComponent<EnemyAI>().health -= transform.GetComponent<Rigidbody>().velocity.magnitude;
-                if (collision.transform.GetComponent<EnemyAI>().health <= 0f)
+                collision.transform.GetComponent<EnemyController>().health -= transform.GetComponent<Rigidbody>().velocity.magnitude;
+                if (collision.transform.GetComponent<EnemyController>().health <= 0f)
                 {
                     onHit();
                     Destroy(collision.transform.gameObject);

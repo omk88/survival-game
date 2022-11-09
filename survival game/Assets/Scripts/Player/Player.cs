@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     #endregion
 
     public bool isPaused;
-    Vector3 pos;
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
 
     public int health = 100;

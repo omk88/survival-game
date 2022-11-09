@@ -4,30 +4,53 @@ using UnityEngine;
 
 public class AnimateSpear : MonoBehaviour
 {
-    public GameObject Spear;
+    private bool firingWeapon = false;
+    private bool isItem = false;
+
+    private void Start()
+    {
+        if (!isItem)
+        {
+            GetComponent<Collider>().isTrigger = true;
+        }
+        else
+        {
+            GetComponent<Collider>().isTrigger = false;
+        }
+    }
+
     void Update()
     {
         if (!Player.instance.isPaused)
         {
-            if (Input.GetMouseButtonDown(0))
+            var normTime = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
+            if (normTime >= 0.99f && firingWeapon)
             {
-                int random = Random.Range(1, 2);
-
-                if (random == 1)
-                {
-                    Spear.GetComponent<Animator>().Play("BowFire");
-                    //StartCoroutine(Sleep());
-                    //axe.GetComponent<Animator>().enabled = false;
-                    print("anim0");
-                }
-
-
-                print(random);
+                firingWeapon = false;
             }
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetMouseButtonDown(0))
             {
-                Spear.GetComponent<Animator>().Play("BowMove");
+                firingWeapon = true;
+                GetComponent<Animator>().Play("SpearAttack");
+            }
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && !firingWeapon)
+            {
+                GetComponent<Animator>().Play("SpearWalk");
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.tag.Equals("Enemy"))
+        {
+            Debug.Log("HIT ENEMY!!!");
+            collision.transform.GetComponent<EnemyController>().health -= 20;
+            if (collision.transform.GetComponent<EnemyController>().health <= 0f)
+            {
+                Destroy(collision.transform.gameObject);
             }
         }
     }

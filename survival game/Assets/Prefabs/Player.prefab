@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 5401527006396688909}
   - component: {fileID: 5401527006396688911}
   - component: {fileID: 5401527006396688908}
+  - component: {fileID: 5501069647064513582}
   m_Layer: 0
   m_Name: Player Controller
   m_TagString: Untagged
@@ -313,6 +314,18 @@ MonoBehaviour:
   followPitch: 0
   followRoll: 0
   followRot: 0
+--- !u!114 &5501069647064513582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401527006396688906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b3025e6a464c644bb90ccce4a73e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5401527006780958781
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,4 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a95a9895582534880f1b4d40836410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
+  health: 100
+  maxHealth: 100
   equippedItem: {fileID: 0}
