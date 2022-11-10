@@ -2,16 +2,20 @@
 
 A basic survival game prototype.
 
+## Video of Gameplay Link:
+
+https://www.youtube.com/watch?v=WIeBejqoxBI
+
 ## WebGL:
 
 https://omk88.github.io/survival-game/build/index.html
 
 ## References:
 
-https://www.youtube.com/watch?v=m9hj9PdO328// acessed 2022,published 10/2019 , used for day and night cycle,Probably Spoonie on youtube 
-https://www.youtube.com/watch?v=yFBB7gvmzK8//accessed 2022, published 6/2021,Big Bird Games on youtube
-https://www.youtube.com/watch?v=AoD_F1fSFFg //accessed 11/22 , published 1/22,used for inventory UI help,Solo Game Dev on youtube
-https://www.youtube.com/watch?v=2CA5jCnQ5B4 // accessed 11/22 , published 3/22 , used for Health UI that was eventually scrapped ,Solo Game Dev on youtube
+https://www.youtube.com/watch?v=m9hj9PdO328 - Accessed 2022, published 10/2019, used for day and night cycle, probably Spoonie on YouTube.
+https://www.youtube.com/watch?v=yFBB7gvmzK8 - Accessed 2022, published 6/2021, Big Bird Games on YouTube.
+https://www.youtube.com/watch?v=AoD_F1fSFFg - Accessed 11/22 , published 1/22, used for inventory UI help, Solo Game Dev on YouTube.
+https://www.youtube.com/watch?v=2CA5jCnQ5B4 - Accessed 11/22 , published 3/22, used for Health UI that was eventually scrapped, Solo Game Dev on YouTube.
 
 ## Controls:
 
